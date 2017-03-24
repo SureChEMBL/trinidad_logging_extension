@@ -1,0 +1,15 @@
+Source: trinidad-logging-extension
+Section: ruby
+Priority: optional
+Maintainer: Yury Zavarin <yzavarin@ebi.ac.uk>
+XS-Ruby-Versions: all
+Build-Depends:
+ debhelper (>= 9),
+ gem2deb,
+
+Package: jruby-trinidad-logging-extension
+Architecture: all
+Depends:
+ jruby,
+ trinidad (>= 0.9.1),
+Description: Extension to configure different logging providers in Trinidad

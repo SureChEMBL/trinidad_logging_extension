@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+DEBIAN_DEST_JAR_DIR = 
+
+override_dh_auto_install:
+	dh_auto_install
+
+	# dh_ruby excludes all uknown files listed in gemspec
+	# and there is no way to configure it, therefore we
+	# copy necessary jar-s here:
+	cp -r trinidad-libs debian/jruby-trinidad-logging-extension/usr/lib/ruby
+
+%:
+	dh $@ --buildsystem=ruby --with ruby
